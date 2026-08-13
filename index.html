@@ -15,33 +15,14 @@ body{margin:0;min-height:100vh;font-family:'Segoe UI',Arial,sans-serif;backgroun
 .hero{position:relative;overflow:hidden;padding:38px 28px 34px;border-radius:30px;background:linear-gradient(135deg,#00843f,#003f20);box-shadow:0 15px 34px rgba(0,0,0,.34);}
 .hero h1{margin:9px 0 7px;font-size:42px;line-height:.96}.hero p{margin:0;font-size:18px;font-weight:800}.club{font-size:12px;font-weight:900;letter-spacing:1.8px;color:var(--lime);}
 .weeks{display:grid;gap:12px;margin-top:16px}.week-card{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:18px 20px;border-radius:22px;background:#fff;color:#102030;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.22);}
-.week-card strong{display:block;font-size:23px}.week-card span{display:block;margin-top:3px;color:#52616d;font-weight:700}.week-card .arrow{font-size:34px}.week-card.current{outline:4px solid var(--lime);}
-.badge{display:none!important;width:max-content;margin-bottom:6px!important;padding:4px 9px;border-radius:999px;background:var(--lime);color:#153000!important;font-size:11px;font-weight:900;}
-.week-card.current .badge{display:inline-block!important;}
+.week-card strong{display:block;font-size:23px}.week-card span{display:block;margin-top:3px;color:#52616d;font-weight:700}.week-card .arrow{font-size:34px}.week-card.current{outline:4px solid var(--lime);}.badge{display:inline-block!important;width:max-content;margin-bottom:6px!important;padding:4px 9px;border-radius:999px;background:var(--lime);color:#153000!important;font-size:11px;font-weight:900;}
 .motto{padding:25px 10px;text-align:center;color:var(--lime);font-size:18px;font-weight:900;}
 </style></head><body><main class="app">
 <section class="hero"><div class="club">TK MLADA BOLESLAV</div><h1>TENISOVY<br>ROZVRH</h1><p>JANIK &amp; SIMONKO</p></section>
 <section class="weeks">
-<a class="week-card" data-week="33" href="tyden33.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 33</strong><span>10.8. - 16.8.2026</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="34" href="tyden34.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 34</strong><span>17.8. - 23.8.2026</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="35" href="tyden35.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 35</strong><span>24.8. - 30.8.2026</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="36" href="tyden36.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 36</strong><span>31.8. - 6.9.2026</span></div><div class="arrow">&#8250;</div></a>
+<a class="week-card current" href="tyden33.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 33</strong><span>10.8. - 16.8.2026</span></div><div class="arrow">&#8250;</div></a>
+<a class="week-card" href="tyden34.html"><div><strong>Tyden 34</strong><span>17.8. - 23.8.2026</span></div><div class="arrow">&#8250;</div></a>
+<a class="week-card" href="tyden35.html"><div><strong>Tyden 35</strong><span>24.8. - 30.8.2026</span></div><div class="arrow">&#8250;</div></a>
 </section>
 <div class="motto">Každý trénink je krok vpřed</div>
-</main>
-<script>
-(function(){
-function isoWeek(d){
-var x=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));
-var day=x.getUTCDay()||7;
-x.setUTCDate(x.getUTCDate()+4-day);
-var y=new Date(Date.UTC(x.getUTCFullYear(),0,1));
-return Math.ceil((((x-y)/86400000)+1)/7);
-}
-var w=isoWeek(new Date());
-document.querySelectorAll('.week-card').forEach(function(card){
-card.classList.toggle('current',Number(card.dataset.week)===w);
-});
-})();
-</script>
-</body></html>
+</main></body></html>
