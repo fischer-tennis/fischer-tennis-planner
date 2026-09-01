@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="cs"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#061a29">
+<link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-192.png">
+<title>Jizdy & upozorneni</title>
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<style>
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#041520,#09273a);color:#fff;font-family:Segoe UI,Arial,sans-serif;min-height:100vh}.app{width:min(100%,620px);margin:auto;padding:14px 14px 42px}
+.back{display:inline-block;color:#fff;text-decoration:none;font-weight:900;margin:8px 4px 14px}.hero{padding:26px 22px;border-radius:28px;background:linear-gradient(135deg,#7c3aed,#4c1d95);box-shadow:0 12px 28px #0006}.eyebrow{color:#ddd6fe;font-size:12px;font-weight:900;letter-spacing:1.6px}.hero h1{font-size:34px;line-height:1;margin:8px 0}.hero p{margin:0;color:#ede9fe;font-weight:700}
+.filters{display:flex;gap:8px;margin:14px 0;position:sticky;top:8px;z-index:4}.filter{flex:1;border:0;border-radius:16px;padding:12px 8px;font-weight:900;background:#fff;color:#172033}.filter.active{background:#b7e43e;color:#153000}.panel{background:#fff;color:#102030;border-radius:24px;padding:18px;margin-top:12px;box-shadow:0 8px 22px #0004}.panel h2{margin:0 0 12px;font-size:21px}
+.next{background:linear-gradient(135deg,#fff,#f5f3ff);border:3px solid #8b5cf6}.next-time{font-size:42px;font-weight:950;color:#5b21b6}.next-title{font-size:21px;font-weight:900;margin-top:4px}.route{color:#556170;font-weight:700;margin-top:6px}.meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.pill{padding:6px 9px;border-radius:999px;background:#eef2f7;font-size:12px;font-weight:900}.count{margin-top:12px;color:#5b21b6;font-weight:900}
+.event{display:grid;grid-template-columns:62px 1fr;gap:12px;padding:13px 0;border-top:1px solid #e5e7eb}.event:first-of-type{border-top:0}.etime{font-size:20px;font-weight:950;color:#0a457d}.etitle{font-weight:900;font-size:16px}.small{font-size:12px;color:#687582;margin-top:4px;font-weight:700}.person-Jan{border-left:5px solid #00843f;padding-left:10px}.person-Majka{border-left:5px solid #f97316;padding-left:10px}
+.downloads{display:grid;gap:9px}.btn{display:block;text-align:center;text-decoration:none;border:0;border-radius:16px;padding:13px 12px;font-weight:900;background:#0b69c7;color:#fff}.btn.purple{background:#6d28d9}.btn.green{background:#15803d}.info{font-size:12px;color:#64748b;line-height:1.45;margin-top:10px}.empty{color:#64748b;font-weight:800;padding:10px 0}.day-title{margin:18px 0 7px;font-size:15px;color:#b7e43e;font-weight:950;text-transform:uppercase;letter-spacing:1px}
+.push-profile{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}.profile-btn{border:2px solid #d8dce4;border-radius:14px;background:#fff;padding:11px;font-weight:950;color:#172033}.profile-btn.active{border-color:#6d28d9;background:#ede9fe;color:#4c1d95}.push-status{margin-top:10px;padding:10px 12px;border-radius:14px;background:#f1f5f9;color:#334155;font-size:12px;font-weight:800}.push-status.ok{background:#dcfce7;color:#166534}.push-status.warn{background:#fff7ed;color:#9a3412}
+</style></head><body><main class="app">
+<a class="back" href="index.html">&larr; Zpet na rozvrh</a>
+<section class="hero"><div class="eyebrow">FISCHER TENNIS PLANNER</div><h1>JIZDY &amp;<br>UPOZORNENI</h1><p>Dnesni odjezdy, auta a rodinny plan</p></section>
+<div class="filters"><button class="filter" data-person="Jan">JA</button><button class="filter" data-person="Majka">MAJKA</button><button class="filter active" data-person="all">VSICHNI</button></div>
+<section class="panel next" id="nextPanel"><h2>Dalsi udalost</h2><div id="nextContent"></div></section>
+<section class="panel"><h2>Dnes</h2><div id="todayList"></div></section>
+<section class="panel"><h2>Push upozorneni</h2><div class="info" style="margin:0 0 10px">Vyber, komu patri tento telefon. Potom povol upozorneni. Telefon se ulozi v OneSignal jako JA nebo MAJKA.</div><div class="push-profile"><button class="profile-btn" data-push-profile="Jan">JA</button><button class="profile-btn" data-push-profile="Majka">MAJKA</button></div><div class="downloads"><button class="btn purple" id="pushBtn">Povolit push upozorneni</button></div><div class="push-status" id="pushStatus">OneSignal se nacita...</div></section>
+<section class="panel"><h2>Tydenni plan</h2><div id="weekList"></div></section>
+</main><script>
+window.OneSignalDeferred=window.OneSignalDeferred||[];let OS=null;OneSignalDeferred.push(async function(OneSignal){OS=OneSignal;await OneSignal.init({appId:'f8592dc4-60de-45e2-85fb-0e54e4003f45',serviceWorkerPath:'/fischer-tennis-planner/OneSignalSDKWorker.js',serviceWorkerParam:{scope:'/fischer-tennis-planner/onesignal-push/'},notifyButton:{enable:false}});updatePushUI();});
+const EVENTS=[{person:'Jan',day:1,dayCode:'PO',time:'12:45',title:'Odjezd z prace pro Janika',route:'Plazy -> Brezno -> Bezdecin',car:'Passat',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Janik pred 13:00 ze skoly/druziny'},
+{person:'Jan',day:1,dayCode:'PO',time:'13:45',title:'Odjezd z Bezdecina zpet do prace',route:'Bezdecin -> Plazy',car:'Passat',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Janik zustava na tenise 14:00-15:30'},
+{person:'Jan',day:1,dayCode:'PO',time:'15:30',title:'Odjezd z prace pro Janika',route:'Plazy -> Bezdecin -> domu',car:'Hyundai',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Janik po tenise chvili pocka'},
+{person:'Majka',day:1,dayCode:'PO',time:'14:50',title:'Odjezd z prace pro Simonka',route:'Plazy -> Rohatsko -> Bezdecin',car:'Passat',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Simonko je po spanku ve skolce'},
+{person:'Majka',day:1,dayCode:'PO',time:'17:00',title:'Simonko - tenis',route:'Sportcentrum Bezdecin',car:'Passat',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Tenis 17:00-18:00'},
+{person:'Majka',day:2,dayCode:'UT',time:'13:50',title:'Odjezd z prace pro Janika',route:'Plazy -> Brezno -> Bezdecin',car:'Passat',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Janik konci skolu ve 14:00; na tenis muze prijet pozdeji'},
+{person:'Majka',day:2,dayCode:'UT',time:'14:30',title:'Odjezd z Bezdecina pro Simonka',route:'Bezdecin -> Rohatsko -> domu',car:'Passat',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Simonko je po spanku ve skolce'},
+{person:'Jan',day:2,dayCode:'UT',time:'15:30',title:'Odjezd z prace pro Janika',route:'Plazy -> Bezdecin -> domu',car:'Hyundai',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Janik po tenise chvili pocka'},
+{person:'Majka',day:3,dayCode:'ST',time:'12:20',title:'Odjezd z prace pro Simonka',route:'Plazy -> Rohatsko -> domu',car:'Passat',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Simonko spi doma'},
+{person:'Jan',day:3,dayCode:'ST',time:'12:45',title:'Odjezd z prace pro Janika',route:'Plazy -> Brezno -> Bezdecin',car:'Hyundai',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Janik pred 13:00 ze skoly/druziny'},
+{person:'Jan',day:3,dayCode:'ST',time:'13:45',title:'Odjezd z Bezdecina zpet do prace',route:'Bezdecin -> Plazy',car:'Hyundai',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Janik zustava na tenise 14:00-15:30'},
+{person:'Majka',day:3,dayCode:'ST',time:'15:30',title:'Vyzvednout Janika po tenise',route:'Bezdecin -> Stare Mesto',car:'Passat',remind:20,from:'2026-09-07',to:'2026-10-16',note:'V 16:00 nabozenstvi'},
+{person:'Majka',day:3,dayCode:'ST',time:'16:00',title:'Janik - nabozenstvi',route:'Stare Mesto',car:'Passat',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Majka potom pokracuje se Simonkem na tenis'},
+{person:'Jan',day:3,dayCode:'ST',time:'16:40',title:'Odjezd z prace pro Janika',route:'Plazy -> Stare Mesto',car:'Hyundai',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Rezerva na parkovani; konec nabozenstvi 17:00'},
+{person:'Majka',day:3,dayCode:'ST',time:'17:00',title:'Simonko - tenis',route:'Sportcentrum Bezdecin',car:'Passat',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Tenis 17:00-18:00'},
+{person:'Majka',day:4,dayCode:'CT',time:'11:50',title:'Odjezd z prace pro deti',route:'Plazy -> Brezno -> Rohatsko -> domu',car:'Passat',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Janik ze skoly, potom Simonko; Simonko spi doma'},
+{person:'Majka',day:4,dayCode:'CT',time:'14:00',title:'Janik - tenis',route:'Domu -> Sportcentrum Bezdecin',car:'Passat',remind:30,from:'2026-09-07',to:'2026-10-16',note:'Majka odveze Janika na tenis 14:00-15:30'},
+{person:'Jan',day:4,dayCode:'CT',time:'15:30',title:'Odjezd z prace pro Janika',route:'Plazy -> Bezdecin -> domu',car:'Hyundai',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Janik po tenise chvili pocka'},
+{person:'Majka',day:5,dayCode:'PA',time:'11:20',title:'Odjezd z prace pro Janika',route:'Plazy -> Brezno',car:'Passat',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Ze skoly odjezd kolem 11:50'},
+{person:'Majka',day:5,dayCode:'PA',time:'11:50',title:'Janik ze skoly -> pro Simonka',route:'Brezno -> Rohatsko -> domu',car:'Passat',remind:10,from:'2026-09-07',to:'2026-10-16',note:'Simonko potom spi doma'},
+{person:'Majka',day:5,dayCode:'PA',time:'15:00',title:'Simonko - tenis',route:'Domu -> Sportcentrum Bezdecin',car:'Passat',remind:30,from:'2026-09-07',to:'2026-10-16',note:'Tenis 15:00-16:00'}];
+const DAYN=['','Pondeli','Utery','Streda','Ctvrtek','Patek','Sobota','Nedele'];let filter=localStorage.getItem('jizdyFilter')||'all';
+function localDate(s){const p=s.split('-').map(Number);return new Date(p[0],p[1]-1,p[2],0,0,0)}function mondayDay(d){let x=d.getDay();return x===0?7:x}function whenToday(e,d){const [h,m]=e.time.split(':').map(Number);return new Date(d.getFullYear(),d.getMonth(),d.getDate(),h,m,0)}function valid(e,d){return d>=localDate(e.from)&&d<=new Date(localDate(e.to).getTime()+86399999)&&mondayDay(d)===e.day&& (filter==='all'||e.person===filter)}
+function iconCar(c){return c.toLowerCase().includes('passat')?'&#128663; Passat':'&#128665; Hyundai'}function esc(s){return String(s).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]))}
+function eventHTML(e){return `<div class='event person-${e.person}'><div class='etime'>${e.time}</div><div><div class='etitle'>${esc(e.title)}</div><div class='small'>${esc(e.route)}</div><div class='meta'><span class='pill'>${e.person==='Jan'?'JA':'MAJKA'}</span><span class='pill'>${iconCar(e.car)}</span><span class='pill'>&#9200; -${e.remind} min</span></div>${e.note?`<div class='small'>${esc(e.note)}</div>`:''}</div></div>`}
+function render(){document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.person===filter));
+const now=new Date();const today=EVENTS.filter(e=>valid(e,now)).sort((a,b)=>a.time.localeCompare(b.time));
+document.getElementById('todayList').innerHTML=today.length?today.map(eventHTML).join(''):'<div class=empty>Dnes uz neni zadna naplanovana jizda.</div>';
+let future=today.map(e=>({e,t:whenToday(e,now)})).filter(x=>x.t>=now).sort((a,b)=>a.t-b.t);let n=document.getElementById('nextContent');
+if(future.length){let x=future[0];n.innerHTML=`<div class='next-time'>${x.e.time}</div><div class='next-title'>${esc(x.e.title)}</div><div class='route'>${esc(x.e.route)}</div>`;
+n.innerHTML+=`<div class='meta'><span class='pill'>${x.e.person==='Jan'?'JA':'MAJKA'}</span><span class='pill'>${iconCar(x.e.car)}</span></div><div class='count' id='countdown'></div>`;
+}else{n.innerHTML='<div class=empty>Pro dnes hotovo &#10003;</div>'}let w='';
+for(let d=1;d<=5;d++){let a=EVENTS.filter(e=>e.day===d&&(filter==='all'||e.person===filter)).sort((a,b)=>a.time.localeCompare(b.time));
+w+=`<div class='day-title'>${DAYN[d]}</div>`+(a.length?a.map(eventHTML).join(''):'<div class=empty>Bez jizd</div>')}document.getElementById('weekList').innerHTML=w;updateCountdown()}
+function updateCountdown(){const el=document.getElementById('countdown');if(!el)return;const now=new Date();const f=EVENTS.filter(e=>valid(e,now)).map(e=>({e,t:whenToday(e,now)})).filter(x=>x.t>=now).sort((a,b)=>a.t-b.t);if(!f.length){el.textContent='';return}let ms=f[0].t-now,hh=Math.floor(ms/3600000),mm=Math.floor((ms%3600000)/60000);el.textContent=hh?`Za ${hh} h ${mm} min`:`Za ${Math.max(0,mm)} min`}
+document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{filter=b.dataset.person;localStorage.setItem('jizdyFilter',filter);render()});
+let pushProfile=localStorage.getItem('pushProfile')||'';function profileId(p){return p==='Majka'?'majka':'jan'}
+function updateProfileButtons(){document.querySelectorAll('[data-push-profile]').forEach(b=>b.classList.toggle('active',b.dataset.pushProfile===pushProfile))}
+async function updatePushUI(){updateProfileButtons();const st=document.getElementById('pushStatus'),btn=document.getElementById('pushBtn');
+if(!OS){st.textContent='OneSignal se nacita...';return}if(!OS.Notifications.isPushSupported()){st.className='push-status warn';st.textContent='Tento prohlizec nepodporuje web push.';btn.disabled=true;return}
+let allowed=OS.Notifications.permission;let sid=OS.User&&OS.User.PushSubscription?OS.User.PushSubscription.id:null;
+if(allowed&&sid&&pushProfile){st.className='push-status ok';st.textContent='Push je aktivni pro '+(pushProfile==='Jan'?'JA':'MAJKA')+'.';btn.textContent='Push upozorneni jsou zapnuta'}
+else if(allowed&&!pushProfile){st.className='push-status warn';st.textContent='Upozorneni jsou povolena, ale vyber JA nebo MAJKA.'}
+else{st.className='push-status';st.textContent=pushProfile?'Profil '+(pushProfile==='Jan'?'JA':'MAJKA')+' je vybran. Ted povol upozorneni.':'Nejdriv vyber JA nebo MAJKA.'}}
+document.querySelectorAll('[data-push-profile]').forEach(b=>b.onclick=async()=>{pushProfile=b.dataset.pushProfile;localStorage.setItem('pushProfile',pushProfile);updateProfileButtons();if(OS&&OS.Notifications.permission){await OS.login(profileId(pushProfile));OS.User.addTag('person',pushProfile);OS.User.addTag('app','fischer-tennis-planner')}updatePushUI()});
+document.getElementById('pushBtn').onclick=async()=>{if(!pushProfile){alert('Nejdriv vyber JA nebo MAJKA.');return}
+if(!OS){alert('OneSignal se jeste nacita. Zkus to za chvili znovu.');return}if(!OS.Notifications.isPushSupported()){alert('Tento prohlizec web push nepodporuje.');return}
+await OS.login(profileId(pushProfile));OS.User.addTag('person',pushProfile);OS.User.addTag('app','fischer-tennis-planner');await OS.Notifications.requestPermission();
+if(OS.Notifications.permission){try{await OS.User.PushSubscription.optIn()}catch(e){}await OS.login(profileId(pushProfile));OS.User.addTag('person',pushProfile);updatePushUI();
+alert('Push upozorneni jsou zapnuta pro '+(pushProfile==='Jan'?'JA':'MAJKA')+'.')}else{updatePushUI();alert('Telefon upozorneni nepovolil. Zkontroluj nastaveni prohlizece/aplikace.')}};
+render();updateProfileButtons();setInterval(updateCountdown,60000);
+if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('service-worker.js').catch(()=>{}))}
+</script></body></html>
