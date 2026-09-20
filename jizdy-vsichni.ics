@@ -6,10 +6,122 @@ METHOD:PUBLISH
 X-WR-CALNAME:Rodinne jizdy
 BEGIN:VEVENT
 UID:jizdy-jan-po-1245-2@fischer-tennis
-DTSTAMP:20260920T195101
+DTSTAMP:20260920T205809
 DTSTART;TZID=Europe/Prague:20260921T124500
 DTEND;TZID=Europe/Prague:20260921T125000
 RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20261002T235959
+SUMMARY:Odjezd z prace pro Janika​
+DESCRIPTION:Plazy -> Brezno -> Bezdecin | Auto: Hyundai | Janik pred 13:00 ze skoly/druziny
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Za 10 min: Odjezd z prace pro Janika​
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:jizdy-jan-po-1345-3@fischer-tennis
+DTSTAMP:20260920T205809
+DTSTART;TZID=Europe/Prague:20260921T134500
+DTEND;TZID=Europe/Prague:20260921T135000
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20261002T235959
+SUMMARY:Odjezd z Bezdecina zpet do prace​
+DESCRIPTION:Bezdecin -> Plazy | Auto: Hyundai | Janik zustava na tenise 14:00-15:30
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Za 10 min: Odjezd z Bezdecina zpet do prace​
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:jizdy-majka-po-1450-4@fischer-tennis
+DTSTAMP:20260920T205809
+DTSTART;TZID=Europe/Prague:20260921T145000
+DTEND;TZID=Europe/Prague:20260921T145500
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20261002T235959
+SUMMARY:Odjezd z prace pro Simonka
+DESCRIPTION:Plazy -> Rohatsko -> Bezdecin | Auto: Passat | Simonko je po spanku ve skolce
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Za 10 min: Odjezd z prace pro Simonka
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:jizdy-jan-po-1530-5@fischer-tennis
+DTSTAMP:20260920T205809
+DTSTART;TZID=Europe/Prague:20260921T153000
+DTEND;TZID=Europe/Prague:20260921T153500
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20261002T235959
+SUMMARY:Vyzvednout Janika po tenise​
+DESCRIPTION:Bezdecin -> domu | Auto: Hyundai | Oba kluci domu
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Za 10 min: Vyzvednout Janika po tenise​
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:jizdy-majka-ut-1350-6@fischer-tennis
+DTSTAMP:20260920T205809
+DTSTART;TZID=Europe/Prague:20260922T135000
+DTEND;TZID=Europe/Prague:20260922T135500
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20261002T235959
+SUMMARY:Odjezd z prace pro Janika
+DESCRIPTION:Plazy -> Brezno -> Bezdecin | Auto: Passat | Janik konci skolu ve 14:00\\; na tenis muze prijet pozdeji
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Za 10 min: Odjezd z prace pro Janika
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:jizdy-majka-ut-1420-7@fischer-tennis
+DTSTAMP:20260920T205809
+DTSTART;TZID=Europe/Prague:20260922T142000
+DTEND;TZID=Europe/Prague:20260922T142500
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20261002T235959
+SUMMARY:Vyzvednout Šimonka ve školce
+DESCRIPTION:Bezdecin -> Rohatsko | Auto: Passat | Simonko je po spanku ve skolce
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Za 10 min: Vyzvednout Šimonka ve školce
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:jizdy-majka-ut-1530-8@fischer-tennis
+DTSTAMP:20260920T205809
+DTSTART;TZID=Europe/Prague:20260922T153000
+DTEND;TZID=Europe/Prague:20260922T153500
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20261002T235959
+SUMMARY:Vyzvednout Janika po tenise​
+DESCRIPTION:Sportcentrum Bezdecin | Auto: Passat | Zustavaji v Bezdecine na Simonkuv tenis
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Za 10 min: Vyzvednout Janika po tenise​
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:jizdy-majka-ut-1600-9@fischer-tennis
+DTSTAMP:20260920T205809
+DTSTART;TZID=Europe/Prague:20260922T160000
+DTEND;TZID=Europe/Prague:20260922T160500
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20261002T235959
+SUMMARY:Simonko - tenis​
+DESCRIPTION:Sportcentrum Bezdecin | Auto: Passat | Tenis 16:00-17:00
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Za 30 min: Simonko - tenis​
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:jizdy-jan-st-1245-10@fischer-tennis
+DTSTAMP:20260920T205809
+DTSTART;TZID=Europe/Prague:20260923T124500
+DTEND;TZID=Europe/Prague:20260923T125000
+RRULE:FREQ=WEEKLY;BYDAY=WE;UNTIL=20261002T235959
 SUMMARY:Odjezd z prace pro Janika
 DESCRIPTION:Plazy -> Brezno -> Bezdecin | Auto: Hyundai | Janik pred 13:00 ze skoly/druziny
 BEGIN:VALARM
@@ -19,11 +131,11 @@ DESCRIPTION:Za 10 min: Odjezd z prace pro Janika
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:jizdy-jan-po-1345-3@fischer-tennis
-DTSTAMP:20260920T195101
-DTSTART;TZID=Europe/Prague:20260921T134500
-DTEND;TZID=Europe/Prague:20260921T135000
-RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20261002T235959
+UID:jizdy-jan-st-1345-11@fischer-tennis
+DTSTAMP:20260920T205809
+DTSTART;TZID=Europe/Prague:20260923T134500
+DTEND;TZID=Europe/Prague:20260923T135000
+RRULE:FREQ=WEEKLY;BYDAY=WE;UNTIL=20261002T235959
 SUMMARY:Odjezd z Bezdecina zpet do prace
 DESCRIPTION:Bezdecin -> Plazy | Auto: Hyundai | Janik zustava na tenise 14:00-15:30
 BEGIN:VALARM
@@ -33,227 +145,171 @@ DESCRIPTION:Za 10 min: Odjezd z Bezdecina zpet do prace
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:jizdy-majka-po-1420-4@fischer-tennis
-DTSTAMP:20260920T195101
-DTSTART;TZID=Europe/Prague:20260921T142000
-DTEND;TZID=Europe/Prague:20260921T142500
-RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20261002T235959
-SUMMARY:Odjezd z prace pro Simonka a Janika
-DESCRIPTION:Plazy -> Rohatsko -> Bezdecin | Auto: Passat | Simonko po spanku\\; v 15:30 vyzvednout Janika
-BEGIN:VALARM
-TRIGGER:-PT10M
-ACTION:DISPLAY
-DESCRIPTION:Za 10 min: Odjezd z prace pro Simonka a Janika
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:jizdy-majka-po-1530-5@fischer-tennis
-DTSTAMP:20260920T195101
-DTSTART;TZID=Europe/Prague:20260921T153000
-DTEND;TZID=Europe/Prague:20260921T153500
-RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20261002T235959
-SUMMARY:Vyzvednout Janika po tenise
-DESCRIPTION:Bezdecin -> domu | Auto: Passat | Oba kluci domu
-BEGIN:VALARM
-TRIGGER:-PT10M
-ACTION:DISPLAY
-DESCRIPTION:Za 10 min: Vyzvednout Janika po tenise
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:jizdy-majka-ut-1400-6@fischer-tennis
-DTSTAMP:20260920T195101
-DTSTART;TZID=Europe/Prague:20260922T140000
-DTEND;TZID=Europe/Prague:20260922T140500
-RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20261002T235959
-SUMMARY:Odjezd z prace pro Simonka
-DESCRIPTION:Bezdecin -> Rohatsko -> Bezdecin | Auto: Passat | Simonko je po spanku ve skolce\\; v 15:30 vyzvednout Janika
-BEGIN:VALARM
-TRIGGER:-PT10M
-ACTION:DISPLAY
-DESCRIPTION:Za 10 min: Odjezd z prace pro Simonka
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:jizdy-majka-ut-1530-7@fischer-tennis
-DTSTAMP:20260920T195101
-DTSTART;TZID=Europe/Prague:20260922T153000
-DTEND;TZID=Europe/Prague:20260922T153500
-RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20261002T235959
-SUMMARY:Vyzvednout Janika po tenise
-DESCRIPTION:Sportcentrum Bezdecin | Auto: Passat | Zustavaji v Bezdecine na Simonkuv tenis
-BEGIN:VALARM
-TRIGGER:-PT10M
-ACTION:DISPLAY
-DESCRIPTION:Za 10 min: Vyzvednout Janika po tenise
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:jizdy-majka-ut-1600-8@fischer-tennis
-DTSTAMP:20260920T195101
-DTSTART;TZID=Europe/Prague:20260922T160000
-DTEND;TZID=Europe/Prague:20260922T160500
-RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20261002T235959
-SUMMARY:Simonko - tenis
-DESCRIPTION:Sportcentrum Bezdecin | Auto: Passat | Tenis 16:00-17:00
-BEGIN:VALARM
-TRIGGER:-PT30M
-ACTION:DISPLAY
-DESCRIPTION:Za 30 min: Simonko - tenis
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:jizdy-majka-st-1220-9@fischer-tennis
-DTSTAMP:20260920T195101
+UID:jizdy-majka-st-1220-12@fischer-tennis
+DTSTAMP:20260920T205809
 DTSTART;TZID=Europe/Prague:20260923T122000
 DTEND;TZID=Europe/Prague:20260923T122500
 RRULE:FREQ=WEEKLY;BYDAY=WE;UNTIL=20261002T235959
-SUMMARY:Odjezd z prace pro deti
-DESCRIPTION:Plazy -> Brezno  -> Rohatsko -> Bezdecin | Auto: Passat | Pro Janika do skoly\\, po Simona a na tenis od 14:00
+SUMMARY:Odjezd z prace pro Šimonka
+DESCRIPTION:Plazy -> Rohatsko -> domu | Auto: Passat | Šimonko spi doma
 BEGIN:VALARM
 TRIGGER:-PT10M
 ACTION:DISPLAY
-DESCRIPTION:Za 10 min: Odjezd z prace pro deti
+DESCRIPTION:Za 10 min: Odjezd z prace pro Šimonka
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:jizdy-majka-st-1530-10@fischer-tennis
-DTSTAMP:20260920T195101
+UID:jizdy-majka-st-1530-13@fischer-tennis
+DTSTAMP:20260920T205809
 DTSTART;TZID=Europe/Prague:20260923T153000
 DTEND;TZID=Europe/Prague:20260923T153500
 RRULE:FREQ=WEEKLY;BYDAY=WE;UNTIL=20261002T235959
-SUMMARY:Vyzvednout Janika po tenise
+SUMMARY:Vyzvednout Janika po tenise​
 DESCRIPTION:Bezdecin -> Stare Mesto | Auto: Passat | V 16:00 nabozenstvi
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Za 30 min: Vyzvednout Janika po tenise
+DESCRIPTION:Za 30 min: Vyzvednout Janika po tenise​
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:jizdy-majka-st-1600-11@fischer-tennis
-DTSTAMP:20260920T195101
+UID:jizdy-majka-st-1600-14@fischer-tennis
+DTSTAMP:20260920T205809
 DTSTART;TZID=Europe/Prague:20260923T160000
 DTEND;TZID=Europe/Prague:20260923T160500
 RRULE:FREQ=WEEKLY;BYDAY=WE;UNTIL=20261002T235959
-SUMMARY:Janik - nabozenstvi
+SUMMARY:Janik - nabozenstvi​
 DESCRIPTION:Stare Mesto | Auto: Passat | Majka potom pokracuje se Simonkem na plavani
 BEGIN:VALARM
 TRIGGER:-PT10M
 ACTION:DISPLAY
-DESCRIPTION:Za 10 min: Janik - nabozenstvi
+DESCRIPTION:Za 10 min: Janik - nabozenstvi​
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:jizdy-majka-st-1630-12@fischer-tennis
-DTSTAMP:20260920T195101
+UID:jizdy-majka-st-1630-15@fischer-tennis
+DTSTAMP:20260920T205809
 DTSTART;TZID=Europe/Prague:20260923T163000
 DTEND;TZID=Europe/Prague:20260923T163500
 RRULE:FREQ=WEEKLY;BYDAY=WE;UNTIL=20261002T235959
-SUMMARY:Odjezd se Simonkem na plavani
+SUMMARY:Odjezd se Simonkem na plavani​
 DESCRIPTION:Stare Mesto -> Na Celne 1456 | Auto: Passat | Simonko ma plavani od 17:00
 BEGIN:VALARM
 TRIGGER:-PT10M
 ACTION:DISPLAY
-DESCRIPTION:Za 10 min: Odjezd se Simonkem na plavani
+DESCRIPTION:Za 10 min: Odjezd se Simonkem na plavani​
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:jizdy-jan-st-1630-13@fischer-tennis
-DTSTAMP:20260920T195101
+UID:jizdy-jan-st-1630-16@fischer-tennis
+DTSTAMP:20260920T205809
 DTSTART;TZID=Europe/Prague:20260923T163000
 DTEND;TZID=Europe/Prague:20260923T163500
 RRULE:FREQ=WEEKLY;BYDAY=WE;UNTIL=20261002T235959
-SUMMARY:Odjezd z prace pro Janika
+SUMMARY:Odjezd z prace pro Janika​
 DESCRIPTION:Plazy -> Stare Mesto | Auto: Hyundai | V 17:00 vyzvednout Janika z nabozenstvi
 BEGIN:VALARM
 TRIGGER:-PT10M
 ACTION:DISPLAY
-DESCRIPTION:Za 10 min: Odjezd z prace pro Janika
+DESCRIPTION:Za 10 min: Odjezd z prace pro Janika​
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:jizdy-majka-st-1700-14@fischer-tennis
-DTSTAMP:20260920T195101
+UID:jizdy-majka-st-1700-17@fischer-tennis
+DTSTAMP:20260920T205809
 DTSTART;TZID=Europe/Prague:20260923T170000
 DTEND;TZID=Europe/Prague:20260923T170500
 RRULE:FREQ=WEEKLY;BYDAY=WE;UNTIL=20261002T235959
-SUMMARY:Simonko - plavani
+SUMMARY:Simonko - plavani​
 DESCRIPTION:Na Celne 1456\\, Mlada Boleslav | Auto: Passat | Plavani od 17:00
 BEGIN:VALARM
 TRIGGER:-PT10M
 ACTION:DISPLAY
-DESCRIPTION:Za 10 min: Simonko - plavani
+DESCRIPTION:Za 10 min: Simonko - plavani​
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:jizdy-jan-ct-1245-15@fischer-tennis
-DTSTAMP:20260920T195101
+UID:jizdy-majka-ct-1150-18@fischer-tennis
+DTSTAMP:20260920T205809
+DTSTART;TZID=Europe/Prague:20260924T115000
+DTEND;TZID=Europe/Prague:20260924T115500
+RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20261002T235959
+SUMMARY:Vyzvednout Šimonka ve školce
+DESCRIPTION:Plazy -> Rohatsko -> domu | Auto: Passat | do skolky pro Simonka
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Za 10 min: Vyzvednout Šimonka ve školce
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:jizdy-jan-ct-1245-19@fischer-tennis
+DTSTAMP:20260920T205809
 DTSTART;TZID=Europe/Prague:20260924T124500
 DTEND;TZID=Europe/Prague:20260924T125000
 RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20261002T235959
-SUMMARY:Odjezd z prace pro Janika
+SUMMARY:Odjezd z prace pro Janika​
 DESCRIPTION:Plazy -> Brezno -> Bezdecin | Auto: Hyundai | Janik pred 13:00 ze skoly/druziny
 BEGIN:VALARM
 TRIGGER:-PT10M
 ACTION:DISPLAY
-DESCRIPTION:Za 10 min: Odjezd z prace pro Janika
+DESCRIPTION:Za 10 min: Odjezd z prace pro Janika​
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:jizdy-majka-ct-1150-16@fischer-tennis
-DTSTAMP:20260920T195101
-DTSTART;TZID=Europe/Prague:20260924T115000
-DTEND;TZID=Europe/Prague:20260924T115500
+UID:jizdy-jan-ct-1345-20@fischer-tennis
+DTSTAMP:20260920T205809
+DTSTART;TZID=Europe/Prague:20260924T134500
+DTEND;TZID=Europe/Prague:20260924T135000
 RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20261002T235959
-SUMMARY:Odjezd z prace pro deti
-DESCRIPTION:Plazy -> Brezno -> Rohatsko -> domu | Auto: Passat | do skolky pro Simonka
+SUMMARY:Odjezd z Bezdecina zpet do prace​
+DESCRIPTION:Bezdecin -> Plazy | Auto: Hyundai | Janik zustava na tenise 14:00-15:00
 BEGIN:VALARM
 TRIGGER:-PT10M
 ACTION:DISPLAY
-DESCRIPTION:Za 10 min: Odjezd z prace pro deti
+DESCRIPTION:Za 10 min: Odjezd z Bezdecina zpet do prace​
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:jizdy-majka-ct-1400-17@fischer-tennis
-DTSTAMP:20260920T195101
-DTSTART;TZID=Europe/Prague:20260924T140000
-DTEND;TZID=Europe/Prague:20260924T140500
+UID:jizdy-majka-ct-1500-21@fischer-tennis
+DTSTAMP:20260920T205809
+DTSTART;TZID=Europe/Prague:20260924T150000
+DTEND;TZID=Europe/Prague:20260924T150500
 RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20261002T235959
-SUMMARY:Janik - tenis
+SUMMARY:Janik - tenis​
 DESCRIPTION:Domu -> Sportcentrum Bezdecin | Auto: Passat | Tenis 14:00-15:00
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Za 30 min: Janik - tenis
+DESCRIPTION:Za 30 min: Janik - tenis​
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:jizdy-majka-ct-1600-18@fischer-tennis
-DTSTAMP:20260920T195101
+UID:jizdy-majka-ct-1600-22@fischer-tennis
+DTSTAMP:20260920T205809
 DTSTART;TZID=Europe/Prague:20260924T160000
 DTEND;TZID=Europe/Prague:20260924T160500
 RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20261002T235959
-SUMMARY:Simonko - tenis
+SUMMARY:Simonko - tenis​
 DESCRIPTION:Sportcentrum Bezdecin | Auto: Passat | Tenis 16:00-17:00
 BEGIN:VALARM
 TRIGGER:-PT10M
 ACTION:DISPLAY
-DESCRIPTION:Za 10 min: Simonko - tenis
+DESCRIPTION:Za 10 min: Simonko - tenis​
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:jizdy-majka-pa-1150-19@fischer-tennis
-DTSTAMP:20260920T195101
+UID:jizdy-majka-pa-1150-23@fischer-tennis
+DTSTAMP:20260920T205809
 DTSTART;TZID=Europe/Prague:20260925T115000
 DTEND;TZID=Europe/Prague:20260925T115500
 RRULE:FREQ=WEEKLY;BYDAY=FR;UNTIL=20261002T235959
-SUMMARY:Odjezd z prace pro deti
+SUMMARY:Odjezd z prace pro deti​
 DESCRIPTION:Plazy -> Brezno -> Rohatsko -> domu | Auto: Passat | Oba po obede\\; bez tenisu
 BEGIN:VALARM
 TRIGGER:-PT10M
 ACTION:DISPLAY
-DESCRIPTION:Za 10 min: Odjezd z prace pro deti
+DESCRIPTION:Za 10 min: Odjezd z prace pro deti​
 END:VALARM
 END:VEVENT
 END:VCALENDAR
