@@ -1,0 +1,23 @@
+{
+    "generatorVersion":  "1.0",
+    "ok":  true,
+    "sourceMode":  "DIRECT_WEEKDAY_SHEETS",
+    "sourceFile":  "Rozvrh_tenis_v4.6.1_BETON_KURTY_OPRAVENO.xlsm",
+    "readOnly":  true,
+    "macrosExecuted":  false,
+    "automationSecurity":  "ForceDisable",
+    "updateLinks":  0,
+    "dateFrom":  "2026-11-02",
+    "dateTo":  "2027-04-02",
+    "weeklyEvents":  17,
+    "datedEvents":  374,
+    "activeRideRules":  0,
+    "weeks":  22,
+    "notificationItems":  374,
+    "localPhotos":  true,
+    "icsCalendars":  3,
+    "webOneSignalEnabled":  false,
+    "finalRelease":  true,
+    "backwardWeekLinks":  true,
+    "paddedWeekLinks":  true
+}

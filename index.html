@@ -1,68 +1,11 @@
-﻿<!DOCTYPE html>
-<html lang="cs">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#061a29">
-<link rel="manifest" href="manifest.json">
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-<link rel="apple-touch-icon" href="icon-192.png">
-<title>Tenisovy rozvrh - vyber tydne</title>
-<style>
-:root{--navy:#061a29;--lime:#b7e43e;}*{box-sizing:border-box}
-body{margin:0;min-height:100vh;font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(180deg,#041520,#09273a);color:#fff;}
-.app{width:min(100%,560px);margin:auto;padding:14px 14px 40px;}
-.hero{position:relative;overflow:hidden;padding:38px 28px 34px;border-radius:30px;background:linear-gradient(135deg,#00843f,#003f20);box-shadow:0 15px 34px rgba(0,0,0,.34);}
-.hero h1{margin:9px 0 7px;font-size:42px;line-height:.96}.hero p{margin:0;font-size:18px;font-weight:800}.club{font-size:12px;font-weight:900;letter-spacing:1.8px;color:var(--lime);}
-.weeks{display:grid;gap:12px;margin-top:16px}.week-card{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:18px 20px;border-radius:22px;background:#fff;color:#102030;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.22);}
-.week-card strong{display:block;font-size:23px}.week-card span{display:block;margin-top:3px;color:#52616d;font-weight:700}.week-card .arrow{font-size:34px}.week-card.current{outline:4px solid var(--lime);}
-.badge{display:none!important;width:max-content;margin-bottom:6px!important;padding:4px 9px;border-radius:999px;background:var(--lime);color:#153000!important;font-size:11px;font-weight:900;}
-.week-card.current .badge{display:inline-block!important;}
-.motto{padding:25px 10px;text-align:center;color:var(--lime);font-size:18px;font-weight:900;}
-.ride-card{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;margin-top:16px;padding:18px 20px;border-radius:22px;background:linear-gradient(135deg,#7c3aed,#4c1d95);color:#fff;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.25)}.ride-icon{font-size:32px}.ride-card strong{display:block;font-size:20px}.ride-card span{display:block;margin-top:3px;color:#ede9fe;font-weight:700}.ride-arrow{font-size:34px}
-</style></head><body><main class="app">
-<section class="hero"><div class="club">TK MLADA BOLESLAV</div><h1>TENISOVY<br>ROZVRH</h1><p>JANIK &amp; SIMONKO</p></section>
-<a class="ride-card" href="jizdy.html"><div class="ride-icon">&#128663;</div><div><strong>JIZDY &amp; UPOZORNENI</strong><span>Dnesni plan, odjezdy a kalendare</span></div><div class="ride-arrow">&#8250;</div></a>
-<section class="weeks">
-<a class="week-card" data-week="45" data-monday="2026-11-02" href="tyden45.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 45</strong><span>2.11. - 8.11.2026</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="46" data-monday="2026-11-09" href="tyden46.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 46</strong><span>9.11. - 15.11.2026</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="47" data-monday="2026-11-16" href="tyden47.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 47</strong><span>16.11. - 22.11.2026</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="48" data-monday="2026-11-23" href="tyden48.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 48</strong><span>23.11. - 29.11.2026</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="49" data-monday="2026-11-30" href="tyden49.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 49</strong><span>30.11. - 6.12.2026</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="50" data-monday="2026-12-07" href="tyden50.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 50</strong><span>7.12. - 13.12.2026</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="51" data-monday="2026-12-14" href="tyden51.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 51</strong><span>14.12. - 20.12.2026</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="52" data-monday="2026-12-21" href="tyden52.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 52</strong><span>21.12. - 27.12.2026</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="53" data-monday="2026-12-28" href="tyden53.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 53</strong><span>28.12. - 3.1.2027</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="1" data-monday="2027-01-04" href="tyden01.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 1</strong><span>4.1. - 10.1.2027</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="2" data-monday="2027-01-11" href="tyden02.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 2</strong><span>11.1. - 17.1.2027</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="3" data-monday="2027-01-18" href="tyden03.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 3</strong><span>18.1. - 24.1.2027</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="4" data-monday="2027-01-25" href="tyden04.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 4</strong><span>25.1. - 31.1.2027</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="5" data-monday="2027-02-01" href="tyden05.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 5</strong><span>1.2. - 7.2.2027</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="6" data-monday="2027-02-08" href="tyden06.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 6</strong><span>8.2. - 14.2.2027</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="7" data-monday="2027-02-15" href="tyden07.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 7</strong><span>15.2. - 21.2.2027</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="8" data-monday="2027-02-22" href="tyden08.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 8</strong><span>22.2. - 28.2.2027</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="9" data-monday="2027-03-01" href="tyden09.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 9</strong><span>1.3. - 7.3.2027</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="10" data-monday="2027-03-08" href="tyden10.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 10</strong><span>8.3. - 14.3.2027</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="11" data-monday="2027-03-15" href="tyden11.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 11</strong><span>15.3. - 21.3.2027</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="12" data-monday="2027-03-22" href="tyden12.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 12</strong><span>22.3. - 28.3.2027</span></div><div class="arrow">&#8250;</div></a>
-<a class="week-card" data-week="13" data-monday="2027-03-29" href="tyden13.html"><div><span class="badge">TENTO TYDEN</span><strong>Tyden 13</strong><span>29.3. - 4.4.2027</span></div><div class="arrow">&#8250;</div></a>
-</section>
+<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#13233f"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css"><script defer src="app.js"></script><title>Fischer Tennis Planner</title></head>
+<body><div class="wrap"><div class="hero"><h1>TENISOVÝ ROZVRH</h1><p>TK Mladá Boleslav · zimní sezóna 2026/2027</p></div>
+<div class="player-launch">
+<a class="player-card janik-card" href="tyden45.html#janik"><div class="avatar"><img src="janik.png" alt="Janík"></div><div class="player-copy"><strong>JANÍK</strong><span>Otevřít aktuální týdenní rozvrh</span></div><div class="arrow">›</div></a>
+<a class="player-card simonko-card" href="tyden45.html#simonko"><div class="avatar"><img src="simonko.png" alt="Šimonko"></div><div class="player-copy"><strong>ŠIMONKO</strong><span>Otevřít aktuální týdenní rozvrh</span></div><div class="arrow">›</div></a>
+<a class="player-card ride-card" href="jizdy.html"><div class="avatar">🚗</div><div class="player-copy"><strong>JÍZDY &amp; UPOZORNĚNÍ</strong><span>Dnešní plán, další událost a kalendáře</span></div><div class="arrow">›</div></a>
+</div>
 <div class="motto">Každý trénink je krok vpřed</div>
-</main>
-<script>
-(function(){
-function isoWeek(d){
-var x=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));
-var day=x.getUTCDay()||7;
-x.setUTCDate(x.getUTCDate()+4-day);
-var first=new Date(Date.UTC(x.getUTCFullYear(),0,1));
-return Math.ceil((((x-first)/86400000)+1)/7);
-}
-var now=new Date();var day=now.getDay()||7;var mon=new Date(now);mon.setDate(now.getDate()-day+1);
-var mk=mon.getFullYear()+'-'+String(mon.getMonth()+1).padStart(2,'0')+'-'+String(mon.getDate()).padStart(2,'0');
-document.querySelectorAll('.week-card').forEach(function(card){
-card.classList.toggle('current',card.dataset.monday===mk);
-});
-})();
-</script>
-</body></html>
+<div class='week-list'><a class='week-card current' href='tyden45.html'><div class='label'>Týden 45</div><div class='dates'>2.11.2026 – 8.11.2026</div><span class='tag'>Aktuální týden</span></a><a class='week-card' href='tyden46.html'><div class='label'>Týden 46</div><div class='dates'>9.11.2026 – 15.11.2026</div></a><a class='week-card' href='tyden47.html'><div class='label'>Týden 47</div><div class='dates'>16.11.2026 – 22.11.2026</div></a><a class='week-card' href='tyden48.html'><div class='label'>Týden 48</div><div class='dates'>23.11.2026 – 29.11.2026</div></a><a class='week-card' href='tyden49.html'><div class='label'>Týden 49</div><div class='dates'>30.11.2026 – 6.12.2026</div></a><a class='week-card' href='tyden50.html'><div class='label'>Týden 50</div><div class='dates'>7.12.2026 – 13.12.2026</div></a><a class='week-card' href='tyden51.html'><div class='label'>Týden 51</div><div class='dates'>14.12.2026 – 20.12.2026</div></a><a class='week-card' href='tyden52.html'><div class='label'>Týden 52</div><div class='dates'>21.12.2026 – 27.12.2026</div></a><a class='week-card' href='tyden53.html'><div class='label'>Týden 53</div><div class='dates'>28.12.2026 – 3.1.2027</div></a><a class='week-card' href='tyden01.html'><div class='label'>Týden 1</div><div class='dates'>4.1.2027 – 10.1.2027</div></a><a class='week-card' href='tyden02.html'><div class='label'>Týden 2</div><div class='dates'>11.1.2027 – 17.1.2027</div></a><a class='week-card' href='tyden03.html'><div class='label'>Týden 3</div><div class='dates'>18.1.2027 – 24.1.2027</div></a><a class='week-card' href='tyden04.html'><div class='label'>Týden 4</div><div class='dates'>25.1.2027 – 31.1.2027</div></a><a class='week-card' href='tyden05.html'><div class='label'>Týden 5</div><div class='dates'>1.2.2027 – 7.2.2027</div></a><a class='week-card' href='tyden06.html'><div class='label'>Týden 6</div><div class='dates'>8.2.2027 – 14.2.2027</div></a><a class='week-card' href='tyden07.html'><div class='label'>Týden 7</div><div class='dates'>15.2.2027 – 21.2.2027</div></a><a class='week-card' href='tyden08.html'><div class='label'>Týden 8</div><div class='dates'>22.2.2027 – 28.2.2027</div></a><a class='week-card' href='tyden09.html'><div class='label'>Týden 9</div><div class='dates'>1.3.2027 – 7.3.2027</div></a><a class='week-card' href='tyden10.html'><div class='label'>Týden 10</div><div class='dates'>8.3.2027 – 14.3.2027</div></a><a class='week-card' href='tyden11.html'><div class='label'>Týden 11</div><div class='dates'>15.3.2027 – 21.3.2027</div></a><a class='week-card' href='tyden12.html'><div class='label'>Týden 12</div><div class='dates'>22.3.2027 – 28.3.2027</div></a><a class='week-card' href='tyden13.html'><div class='label'>Týden 13</div><div class='dates'>29.3.2027 – 4.4.2027</div></a></div>
+<div class="footer">Fischer Tennis Planner V1.0</div></div></body></html>
